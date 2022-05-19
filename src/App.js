@@ -18,7 +18,7 @@ const App = () => {
   console.log("currentAccount: ", currentAccount);
 
   /* デプロイされたコントラクトのアドレスを保持する変数を作成 */
-  const contractAddress = "0x1A32b37eC6ce0bD20049b070B74D85bd36F5370C";
+  const contractAddress = "0xb21aDCa954fB1645e525B905Cf0c3fdDE0bbe99E";
 
   /* コントラクトからすべてのwavesを取得するメソッドを作成 */
   /* ABIの内容を参照する変数を作成 */
