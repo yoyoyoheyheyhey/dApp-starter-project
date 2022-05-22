@@ -197,7 +197,11 @@ const App = () => {
       <div className="bg"></div>
       <div className="content">
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a type="button" className="wallet-connect-btn">
+        <a
+          type="button"
+          className="wallet-connect-btn"
+          onClick={connectWallet}
+        >
           <span></span>
           <span></span>
           <span></span>
