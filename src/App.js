@@ -194,68 +194,56 @@ const App = () => {
 
   return (
     <div className="mainContainer">
-      <div className="dataContainer">
-        <div className="header">
-          <span role="img" aria-label="hand-wave">
-            👋
-          </span>{" "}
-          WELCOME!
-        </div>
-        <div className="bio">
-          イーサリアムウォレットを接続して、メッセージを作成したら、
-          <span role="img" aria-label="hand-wave">
-            👋
-          </span>
-          を送ってください
-          <span role="img" aria-label="shine">
-            ✨
-          </span>
-        </div>
-        <br />
-        {/* ウォレットコネクトのボタンを実装 */}
-        {!currentAccount && (
-          <button className="waveButton" onClick={connectWallet}>
-            Connect Wallet
-          </button>
-        )}
+      <div className="bg"></div>
+      <div className="content">
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <a type="button" className="wallet-connect-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          { currentAccount ? 'WALLET CONNECTED' : 'CONNECT WALLET' }
+        </a>
+
+        <h1>Bad Vibes Only</h1>
+
+        <img
+          className="finger"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/62921/middle-finger-emoji.png"
+          alt="fuck"
+          onClick={wave}
+        />
+
         {currentAccount && (
-          <button className="waveButton">Wallet Connected</button>
+          <div className="msg-wrapper">
+            <input
+              name="messageArea"
+              placeholder="In a bad world, bad is good. If you get the moral polarity of it."
+              type="text"
+              id="message"
+              value={messageValue}
+              onChange={(e) => setMessageValue(e.target.value)}
+            />
+            <span className="underline"></span>
+          </div>
         )}
-        {/* waveボタンにwave関数を連動 */}
-        {currentAccount && (
-          <button className="waveButton" onClick={wave}>
-            Wave at Me
-          </button>
-        )}
-        {/* メッセージボックスを実装*/}
-        {currentAccount && (
-          <textarea
-            name="messageArea"
-            placeholder="メッセージはこちら"
-            type="text"
-            id="message"
-            value={messageValue}
-            onChange={(e) => setMessageValue(e.target.value)}
-          />
-        )}
-        {/* 履歴を表示する */}
+
         {currentAccount &&
           allWaves
             .slice(0)
             .reverse()
-            .map((wave, index) => {
+            .map((fuck, index) => {
               return (
                 <div
                   key={index}
                   style={{
-                    backgroundColor: "#F8F8FF",
                     marginTop: "16px",
                     padding: "8px",
                   }}
                 >
-                  <div>Address: {wave.address}</div>
-                  <div>Time: {wave.timestamp.toString()}</div>
-                  <div>Message: {wave.message}</div>
+                  <div>Address: {fuck.address}</div>
+                  <div>Time: {fuck.timestamp.toString()}</div>
+                  <div>Message: {fuck.message}</div>
                 </div>
               );
             })}
