@@ -200,7 +200,7 @@ const App = () => {
         <a
           type="button"
           className="wallet-connect-btn"
-          onClick={connectWallet}
+          onClick={currentAccount ? undefined : connectWallet }
         >
           <span></span>
           <span></span>
