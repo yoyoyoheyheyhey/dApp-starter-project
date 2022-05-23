@@ -232,25 +232,30 @@ const App = () => {
           </div>
         )}
 
-        {currentAccount &&
-          allWaves
-            .slice(0)
-            .reverse()
-            .map((fuck, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{
-                    marginTop: "16px",
-                    padding: "8px",
-                  }}
-                >
-                  <div>Address: {fuck.address}</div>
-                  <div>Time: {fuck.timestamp.toString()}</div>
-                  <div>Message: {fuck.message}</div>
-                </div>
-              );
-            })}
+        {
+          currentAccount && <div className="history">
+            <h2>History</h2>
+            {
+              allWaves
+                .slice(0)
+                .reverse()
+                .map((fuck, index) => {
+                  return (
+                    <div
+                      key={index}
+                      style={{
+                        marginTop: "16px",
+                        padding: "8px",
+                      }}
+                    >
+                      <div>Address: {fuck.address}</div>
+                      <div>Time: {fuck.timestamp.toString()}</div>
+                      <div>Message: {fuck.message}</div>
+                    </div>
+                  );
+                })}
+          </div>
+        }
       </div>
     </div>
   );

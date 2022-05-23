@@ -212,3 +212,10 @@ body {
   background-color: #d92626;
   transition: 0.5s;
 }
+
+.history {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 12px;
+}
